@@ -12,8 +12,8 @@ terraform {
 
   required_version = ">= 1.3"
   backend "s3" {
-    bucket = "terraform-state-test-281123"
-    key    = "docker_k/terraform.tfstate"
+    bucket = "pacman-docker-jenkins"
+    key    = "TestInstance2Last/terraform.tfstate"
     region = "us-east-1"
   }
 }
