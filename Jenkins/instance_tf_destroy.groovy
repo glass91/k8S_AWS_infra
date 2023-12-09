@@ -8,7 +8,7 @@ pipeline {
             steps {
                 git(
                 branch: 'main',
-                url: 'https://github.com/AlexTlst/Jenkins.git',
+                url: 'https://github.com/glass91/k8S_AWS_infra.git',
                 credentialsId: 'access_to_git'
                 )
             }
