@@ -9,14 +9,14 @@ pipeline {
                 git(
                 branch: 'main',
                 url: 'https://github.com/glass91/k8S_AWS_infra.git',
-                credentialsId: 'access_to_git'
+                credentialsId: 'acces_to_git'
                 )
             }
         }
         stage('Terraform Initialize and Plan Destroy') {
             steps {
                 sh '''
-                cd /var/lib/jenkins/workspace/HTML_pipe/terraform_ansible_generic_instace_setup_template
+                cd ./TF
                 terraform init
                 terraform plan -destroy -out=destroyplan.tfplan
                 '''
@@ -30,7 +30,7 @@ pipeline {
         stage('Terraform Apply Destroy') {
             steps {
                 sh '''
-                cd /var/lib/jenkins/workspace/HTML_pipe/terraform_ansible_generic_instace_setup_template
+                cd ./TF
                 terraform apply destroyplan.tfplan
                 '''
             }
